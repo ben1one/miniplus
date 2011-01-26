@@ -1,0 +1,30 @@
+{
+  "name": "miniplus",
+  "version": "1.7",
+  "background_page": "background.html",
+  "permissions": [
+    "tabs", "http://*/","http://ajax.googleapis.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://www.miniforum.net/*","http://miniforum.net/*"],
+      "js": ["jquery.min.js", "contentscript.js"],
+      "all_frames":true
+
+    }
+  ],
+  "description": "A Chrome Extension for Miniforum",
+  "browser_action": {
+    "popup": "popup.html"
+  },
+
+  
+  "browser_action": {
+      "name": "miniplus",
+      "default_icon": "miniplus_logo_128.png"
+  },
+  "icons": { "16": "miniplus_logo_16.png",
+           "48": "miniplus_logo_48.png",
+          "128": "miniplus_logo_128.png" },
+      "options_page": "options.html"
+}

@@ -1,0 +1,416 @@
+﻿<!DOCTYPE>
+<!--
+ * Copyright (c) 2009 The Chromium Authors. All rights reserved.  Use of this
+ * source code is governed by a BSD-style license that can be found in the
+ * LICENSE file.
+-->
+<html>
+    <head>
+        <title>Personal Settings</title>
+        <style>
+            .providerSelection {
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 10pt;
+            }
+            body{
+                background-image: url('bg1.jpg');
+                background-position:  top;
+                background-repeat: no-repeat;
+                margin-left: 30px;
+
+            }
+        </style>
+        <script>
+
+
+            function toggle(radioButton) {
+                if (window.localStorage == null) {
+                    alert('Local storage is required for changing providers');
+                    return;
+                }
+
+                var selected = radioButton.value;
+                if (selected == "on") {
+                    window.localStorage.customMailtoUrl = "on";
+                    //alert(window.localStorage.customMailtoUrl);
+                } else {
+                    window.localStorage.customMailtoUrl = "off";
+                    //alert(window.localStorage.customMailtoUrl);
+                }
+            }
+
+            function toggle_like(radioButton) {
+                if (window.localStorage == null) {
+                    alert('Local storage is required for changing providers');
+                    return;
+                }
+
+                var selected = radioButton.value;
+                if (selected == "on") {
+                    window.localStorage.like = "on";
+                    //alert(window.localStorage.customMailtoUrl);
+                } else {
+                    window.localStorage.like = "off";
+                    //alert(window.localStorage.customMailtoUrl);
+                }
+            }
+			
+            function toggle_youtube(radioButton) {
+                if (window.localStorage == null) {
+                    alert('Local storage is required for changing providers');
+                    return;
+                }
+
+                var selected = radioButton.value;
+                if (selected == "on") {
+                    window.localStorage.youtube = "on";
+                    //alert(window.localStorage.customMailtoUrl);
+                } else {
+                    window.localStorage.youtube = "off";
+                    //alert(window.localStorage.customMailtoUrl);
+                }
+            }
+            
+            function toggle_preview(radioButton) {
+                if (window.localStorage == null) {
+                    alert('Local storage is required for changing providers');
+                    return;
+                }
+
+                var selected = radioButton.value;
+                if (selected == "on") {
+                    window.localStorage.preview = "on";
+                    //alert(window.localStorage.customMailtoUrl);
+                } else {
+                    window.localStorage.preview = "off";
+                    //alert(window.localStorage.customMailtoUrl);
+                }
+            }
+
+            function toggle_page(radioButton) {
+                if (window.localStorage == null) {
+                    alert('Local storage is required for changing providers');
+                    return;
+                }
+
+                var selected = radioButton.value;
+                if (selected == "on") {
+                    window.localStorage.page = "on";
+                    //alert(window.localStorage.customMailtoUrl);
+                } else {
+                    window.localStorage.page = "off";
+                    //alert(window.localStorage.customMailtoUrl);
+                }
+            }
+
+
+
+            function toggle_boss(radioButton) {
+                if (window.localStorage == null) {
+                    alert('Local storage is required for changing providers');
+                    return;
+                }
+
+                var selected = radioButton.value;
+                if (selected == "on") {
+                    window.localStorage.boss = "on";
+                    //alert(window.localStorage.customMailtoUrl);
+                } else {
+                    window.localStorage.boss = "off";
+                    //alert(window.localStorage.customMailtoUrl);
+                }
+            }
+
+            function toggle_bigicon(radioButton) {
+                if (window.localStorage == null) {
+                    alert('Local storage is required for changing providers');
+                    return;
+                }
+
+                var selected = radioButton.value;
+                if (selected == "on") {
+                    window.localStorage.bigicon = "on";
+                    //alert(window.localStorage.customMailtoUrl);
+                } else {
+                    window.localStorage.bigicon = "off";
+                    //alert(window.localStorage.customMailtoUrl);
+                }
+            }
+
+            function toggle_position(radioButton) {
+                if (window.localStorage == null) {
+                    alert('Local storage is required for changing providers');
+                    return;
+                }
+
+                var selected = radioButton.value;
+                if (selected == "on") {
+                    window.localStorage.position = "on";
+                    //alert(window.localStorage.customMailtoUrl);
+                } else {
+                    window.localStorage.position = "off";
+                    //alert(window.localStorage.customMailtoUrl);
+                }
+            }
+
+            function main() {
+                if (window.localStorage == null) {
+                    alert("LocalStorage must be enabled for changing options.");
+                    document.getElementById('on').disabled = true;
+                    document.getElementById('off').disabled = true;
+                    document.getElementById('boss_on').disabled = true;
+                    document.getElementById('boss_off').disabled = true;
+                    return;
+                }
+
+                // Default handler is checked. If we've chosen another provider, we must
+                // change the checkmark.
+                if (window.localStorage.customMailtoUrl == 'on')
+                    document.getElementById('on').checked = true;
+
+                if (window.localStorage.customMailtoUrl == 'off')
+                    document.getElementById('off').checked = true;
+
+                if (window.localStorage.like == 'on')
+                    document.getElementById('like_on').checked = true;
+
+                if (window.localStorage.like == 'off')
+                    document.getElementById('like_off').checked = true;
+
+                if (window.localStorage.boss == 'on')
+                    document.getElementById('boss_on').checked = true;
+
+                if (window.localStorage.boss == 'off')
+                    document.getElementById('boss_off').checked = true;
+
+
+                if (window.localStorage.bigicon == 'on')
+                    document.getElementById('bigicon_on').checked = true;
+
+                if (window.localStorage.bigicon == 'off')
+                    document.getElementById('bigicon_off').checked = true;
+
+                if (window.localStorage.position == 'on')
+                    document.getElementById('position_on').checked = true;
+
+                if (window.localStorage.position == 'off')
+                    document.getElementById('position_off').checked = true;
+					
+                if (window.localStorage.youtube == 'on')
+                    document.getElementById('youtube_on').checked = true;
+
+                if (window.localStorage.youtube == 'off')
+                    document.getElementById('youtube_off').checked = true;
+
+                if (window.localStorage.preview == 'on')
+                    document.getElementById('preview_on').checked = true;
+
+                if (window.localStorage.preview == 'off')
+                    document.getElementById('preview_off').checked = true;
+
+               if (window.localStorage.page == 'on')
+                    document.getElementById('page_on').checked = true;
+
+                if (window.localStorage.page == 'off')
+                    document.getElementById('page_off').checked = true;
+
+            }
+        </script>
+    </head>
+    <body onload="main()">
+
+        <img src="banner.png" border="0" /><p/>
+
+
+        <script type="text/javascript"><!--
+            google_ad_client = "pub-5984960572076322";
+            /* 728x90, 已建立 2010/7/30 */
+            google_ad_slot = "0827917382";
+            google_ad_width = 728;
+            google_ad_height = 90;
+            //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+
+
+
+        <div class="providerSelection">
+            For help and latest updates, please become a fan at <a terget="_blank" href="http://www.facebook.com/pages/miniplus/129945930374344">http://www.facebook.com/pages/miniplus/129945930374344</a>
+        </div>
+        <table border="0">
+            <tr>
+
+                <td height="22"></td>
+            </tr>
+            <tr>
+                <td valign="center">
+                    <div class="providerSelection">
+                        <strong>預設顯示個人簽名：</strong>
+                        <br /><br />
+                        <input id="on" type="radio" name="mailto" value="on"
+                               onclick="toggle(this)" checked>開啟<br>
+                        <input id="off" type="radio" name="mailto" value="off"
+                               onclick="toggle(this)">停用<br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="center">
+                    <br/>
+                    <div class="providerSelection">
+                        <strong>Boss Mode</strong>
+                        <br /><br />
+                        <input id="boss_on" type="radio" name="boss" value="on"
+                               onclick="toggle_boss(this)" >開啟<br>
+                        <input id="boss_off" type="radio" checked name="boss" value="off"
+                               onclick="toggle_boss(this)">停用<br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="center">
+                    <br/>
+                    <div class="providerSelection">
+                        <strong>Hide Miniforum icon</strong>
+                        <br /><br />
+                        <input id="bigicon_on" type="radio" name="bigicon" value="on"
+                               onclick="toggle_bigicon(this)" >開啟<br>
+                        <input id="bigicon_off" type="radio" checked name="bigicon" value="off"
+                               onclick="toggle_bigicon(this)">停用<br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="center">
+                    <br/>
+                    <div class="providerSelection">
+                        <strong>Click a message, move to its top</strong>
+                        <br /><br />
+                        <input id="position_on" type="radio" name="position" value="on"
+                               onclick="toggle_position(this)" >開啟<br>
+                        <input id="position_off" type="radio" checked name="position" value="off"
+                               onclick="toggle_position(this)">停用<br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="center"><br/>
+                    <div class="providerSelection">
+                        <strong>Facebook like button</strong>
+                        <br /><br />
+                        <input id="like_on" type="radio" name="like" value="on"
+                               onclick="toggle_like(this)" checked>開啟<br>
+                        <input id="like_off" type="radio" name="like" value="off"
+                               onclick="toggle_like(this)">停用<br>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td valign="center"><br/>
+                    <div class="providerSelection">
+                        <strong>Youtube embed</strong>
+                        <br /><br />
+                        <input id="youtube_on" type="radio" name="youtube" value="on"
+                               onclick="toggle_youtube(this)" checked>開啟<br>
+                        <input id="youtube_off" type="radio" name="youtube" value="off"
+                               onclick="toggle_youtube(this)">停用<br>
+                    </div>
+                </td>
+            </tr>
+
+                        <tr>
+                <td valign="center"><br/>
+                    <div class="providerSelection">
+                        <strong>Image Preview</strong>
+                        <br /><br />
+                        <input id="preview_on" type="radio" name="preview" value="on"
+                               onclick="toggle_preview(this)" checked>開啟<br>
+                        <input id="preview_off" type="radio" name="preview" value="off"
+                               onclick="toggle_preview(this)">停用<br>
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td valign="center"><br/>
+                    <div class="providerSelection">
+                        <strong>Old style paging</strong>
+                        <br /><br />
+                        <input id="page_on" type="radio" name="page" value="on"
+                               onclick="toggle_page(this)" checked>開啟<br>
+                        <input id="page_off" type="radio" name="page" value="off"
+                               onclick="toggle_page(this)">停用<br>
+                    </div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td valign="center"><br/>
+                    <div class="providerSelection">
+                        <strong>LauMing (powered by Instapaper)</strong>
+                        <br />
+                        username: <input id="lauming_username" type="text" name="lauming_username" value=""
+                               onkeyup ="window.localStorage.lauming_username = document.getElementById('lauming_username').value ;" >
+                        password:<input id="lauming_password" type="password" name="lauming_password" value=""
+                               onkeyup ="window.localStorage.lauming_password = document.getElementById('lauming_password').value ;">
+                        <br/><a href="http://www.instapaper.com/u">See LauMing Posts</a><br>
+                        
+                    </div>
+                </td>
+            </tr>
+            
+
+
+            <tr>
+                <td valign="center">
+                    <br/>
+                    <div class="providerSelection">
+                        <strong>自設表情符號：</strong><br/>
+	直接貼上圖像網址，以,分隔。<br/>例如：http://img.miniforum.net/temp1/emotion/em19.gif, http://img.miniforum.net/temp1/emotion/em09.gif<br/>
+	完成後發布頁面將自動出現。<br/>
+                        <textarea id="custom_icon" name="" rows="20" cols="80" onkeyup="window.localStorage.test = document.getElementById('custom_icon').value ;"></textarea>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td valign="center"><br/>
+                    <div class="providerSelection">
+                        <strong>黑名單用戶：</strong></br>
+	直接輸入用戶名稱，以,分隔。例如：userA, userB, userC<br/>
+	被加入黑名單的用戶所發的貼子/回覆均會被隱藏。<br/>
+                        <textarea id="bam" name="bam" rows="20" cols="80" onkeyup ="window.localStorage.bam = document.getElementById('bam').value ; "></textarea>
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+        <p/>
+        <center><div class="providerSelection">© 2010 miniplus </div></center>
+        <p/>
+    </body>
+</html>
+<script>
+    //window.localStorage.test = 'bye';
+    // alert(window.localStorage.test);
+
+   if(window.localStorage.lauming_username !='undefined'){
+    document.getElementById('lauming_username').value = window.localStorage.lauming_username ;
+    document.getElementById('lauming_password').value = window.localStorage.lauming_password ;
+   }
+   
+
+    document.getElementById('custom_icon').value = window.localStorage.test ;
+    document.getElementById('bam').value = window.localStorage.bam ;
+    document.getElementById('boss').value = window.localStorage.boss ;
+    document.getElementById('like').value = window.localStorage.like ;
+    document.getElementById('bigicon').value = window.localStorage.bigicon ;
+    document.getElementById('position').value = window.localStorage.position ;
+    document.getElementById('preview').value = window.localStorage.preview ;
+
+
+</script>
